@@ -1,0 +1,2 @@
+class AbstractRepository:
+    model = None
