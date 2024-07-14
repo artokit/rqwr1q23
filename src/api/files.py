@@ -11,7 +11,7 @@ async def upload_file(file: UploadFile, service: FileService = Depends(file_serv
     return await service.upload_file(file)
 
 
-@router.post("/{file_id}", response_model=FileDownloadResponse)
+@router.get("/{file_id}", response_model=FileDownloadResponse)
 async def get_file(file_id: str, service: FileService = Depends(file_service)):
     res = await service.get_object(file_id)
     if res:
